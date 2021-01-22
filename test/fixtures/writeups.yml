@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tournament_name: MyString
+  startdate: 2021-01-23 02:11:02
+  problem_name: MyString
+  problem_type: MyString
+  description: MyString
+
+two:
+  tournament_name: MyString
+  startdate: 2021-01-23 02:11:02
+  problem_name: MyString
+  problem_type: MyString
+  description: MyString
