@@ -1,0 +1,28 @@
+h1 新しいWriteUpを追加
+
+.nav.justify-content-end
+    = link_to '一覧' , writeups_path, class: 'nav-link'
+
+
+= form_with model: @writeup, local: true do |f|
+    .form-group
+        = f.label :tournament_name, '大会名'
+        = f.text_field :tournament_name, class: 'form-control'
+
+    .form-group
+        = f.label :startdate, '開始日時'
+        = f.text_field :startdate, class: 'form-control'
+
+    .form-group
+        = f.label :problem_name, '問題名'
+        = f.text_field :problem_name, class: 'form-control'
+
+    .form-group
+        = f.label :problem_type, '問題種類'
+        = f.text_field :problem_type, class: 'form-control'
+
+    .form-group
+        = f.label :description, '解説'
+        = f.text_area :description, class: 'form-control'
+   
+    = f.submit nil, class: 'btn btn-primary'
