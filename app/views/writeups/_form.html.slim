@@ -1,0 +1,24 @@
+
+
+= form_with model: writeup, local: true do |f|
+    .form-group
+        = f.label :tournament_name, '大会名'
+        = f.text_field :tournament_name, class: 'form-control'
+
+    .form-group
+        = f.label :startdate, '開始日時'
+        = f.date_select :startdate, class: 'form-control'
+
+    .form-group
+        = f.label :problem_name, '問題名'
+        = f.text_field :problem_name, class: 'form-control'
+
+    .form-group
+        = f.label :problem_type, '問題種類'
+        = f.select :problem_type, [["Crypto", "Crypto"], ["Bin,Rev", "Bin,Rev"], ["Forensics", "Forensics"], ["Web", "Web"], ["Pwn", "Pwn"], ["Osint", "Osint"], ["Misc", "Misc"]], class: 'form-control'
+
+    .form-group
+        = f.label :description, '解説'
+        = f.text_area :description, class: 'form-control'
+   
+    = f.submit nil, class: 'btn btn-primary'

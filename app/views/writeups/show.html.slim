@@ -1,0 +1,25 @@
+h1 Writeup詳細
+
+
+.nav.justify-content-end
+    = link_to '一覧' , writeups_path, class: 'nav-link'
+
+
+table.table.table-hover
+    tbody
+        tr
+            th= Writeup.human_attribute_name(:tournament_name)
+            td= @writeup.tournament_name
+        tr
+            th= Writeup.human_attribute_name(:startdate)
+            td= @writeup.startdate
+
+        tr
+            th= Writeup.human_attribute_name(:problem_name)
+            td= @writeup.problem_name
+        tr
+            th= Writeup.human_attribute_name(:problem_type)
+            td= @writeup.problem_type
+        tr
+            th= Writeup.human_attribute_name(:description)
+            td= @writeup.description

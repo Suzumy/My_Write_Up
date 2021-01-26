@@ -1,3 +1,28 @@
 h1 タスク一覧
 
 = link_to '新規登録', new_writeup_path, class: 'btn btn-primary'
+
+
+.mb-3
+table.table.table-hover
+    thead.thead-default
+        tr
+            th= Writeup.human_attribute_name(:tournament_name)
+            th= Writeup.human_attribute_name(:startdate)
+            th= Writeup.human_attribute_name(:problem_name)
+            th= Writeup.human_attribute_name(:problem_type)
+            th
+        
+    tbody
+        - @writeups.each do |writeup|
+            tr
+                /td= writeup.tournament_name
+                td= link_to writeup.tournament_name, writeup
+                /td= writeup.startdate
+                td= link_to writeup.startdate, writeup
+                /td= writeup.problem_name
+                td= link_to writeup.problem_name
+                /td= writeup.problem_type
+                td= link_to writeup.problem_type
+                td= link_to '編集', edit_writeup_path(writeup), class: 'btn btn-primary mr-3'
+                td= link_to '削除', writeup, method: :delete, data: { confirm: "記事「#{writeup.tournament_name}を削除しますか？」" }, class: 'btn btn-danger'
